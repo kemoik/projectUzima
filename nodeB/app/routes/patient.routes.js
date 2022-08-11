@@ -1,11 +1,12 @@
 module.exports = app => {
-    const patients =  require ("..//controllers/patient.contoller.js")
+    const patient =  require ("..//controllers/patient.contoller.js")
     var router = require ("express").Router();
 
-    router.post("/",patients.create);
+    router.post("/",patient.create);
 
-    router.get("/",patients.findAll);
+    router.get("/",patient.findAll);
+    router.get("/",patient.update);
 
-    router.get("/:name",patients.findName)
+    router.get("/:name",patient.findName);
 
 }
